@@ -247,8 +247,6 @@ def vc_asst(dec, **kwargs):
 
     return ay
 
-return dec
-
 
 # --------------------------------------------------
 
