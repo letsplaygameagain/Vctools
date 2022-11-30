@@ -11,7 +11,7 @@
 • `{i}joinvc <optional chat id/username>`
    Bergabunglah dengan obrolan suara.
 
-• `{i}end`
+• `{i}leavevc`
    Leave the voice chat.
 
 • `{i}rejoin`
@@ -41,10 +41,11 @@ async def join_(event):
         chat = event.chat_id
     aySongs = Player(chat, event)
     if not aySongs.group_call.is_connected:
+    	await aySongs.group_call.set_is_mute(True)
         await aySongs.vc_joiner()
 
 
-@vc_asst("(end|stopvc)")
+@vc_asst("(leavevc|stopvc)")
 async def leaver(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
