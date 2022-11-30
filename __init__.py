@@ -207,7 +207,7 @@ class Player:
 
 
 def vc_asst(dec, **kwargs):
-    def ult(func):
+    def ay(func):
         kwargs["func"] = (
             lambda e: not e.is_private and not e.via_bot_id and not e.fwd_from
         )
@@ -245,7 +245,9 @@ def vc_asst(dec, **kwargs):
             events.NewMessage(**kwargs),
         )
 
-    return ult
+    return ay
+
+return dec
 
 
 # --------------------------------------------------
