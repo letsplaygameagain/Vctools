@@ -41,8 +41,8 @@ async def join_(event):
         chat = event.chat_id
     aySongs = Player(chat, event)
     if not aySongs.group_call.is_connected:
-    	await aySongs.group_call.set_is_mute(True)
-        await aySongs.vc_joiner()
+    await aySongs.group_call.set_is_mute(True)
+    await aySongs.vc_joiner()
 
 
 @vc_asst("(leavevc|stopvc)")
