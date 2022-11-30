@@ -40,7 +40,7 @@ async def join_(event):
     else:
         chat = event.chat_id
     aySongs = Player(chat, event)
-    await aySongs.group_call.set_pause(True)
+    await aySongs.group_call.set_pause(False)
     if not aySongs.group_call.is_connected:
         await aySongs.vc_joiner()
 
